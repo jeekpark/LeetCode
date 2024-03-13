@@ -8,10 +8,13 @@ public:
 
     int pivotInteger(int n) {
         const int totalSum = sum(n);
+        int prevSum = 0;
         for (int i = 1; i <= n; ++i)
         {
-            if (sum(i) == totalSum - sum(i - 1))
+            int temp = sum(i);
+            if (temp == totalSum - prevSum)
                 return i;
+            prevSum = temp;
         }
         return -1;
         
