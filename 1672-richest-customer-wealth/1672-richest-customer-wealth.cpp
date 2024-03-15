@@ -6,7 +6,7 @@ public:
         {
             int sum = 0;
             for (int n : v) sum += n;
-            if (res < sum) res = sum;
+            res = sum > res ? sum : res;
         }
         return res;
     }
