@@ -4,7 +4,7 @@ public:
     int canCompleteCircuit(vector<int>& gas, vector<int>& cost)
     {
         static int aa = 0;
-        if (i == 0)
+        if (aa == 0)
         {
             ios_base::sync_with_stdio(false);
             cin.tie(NULL);
