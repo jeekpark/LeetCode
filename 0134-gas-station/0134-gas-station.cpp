@@ -3,22 +3,18 @@ class Solution
 public:
     int canCompleteCircuit(vector<int>& gas, vector<int>& cost)
     {
-        int totalGas = 0;
-        int totalCost = 0;
-        int currentGas = 0;
-        int start = 0;
-        for (size_t i = 0, len = gas.size(); i < len; ++i)
+        int bal = 0, start = 0, total = 0;
+        for(int i = 0, n = gas.size(); i< n; ++i)
         {
-            totalGas += gas[i];
-            totalCost += cost[i];
-            currentGas += gas[i] - cost[i];
-            if (currentGas < 0)
+            bal += gas[i] - cost[i];
+            if(bal < 0)
             {
-                start = i + 1;
-                currentGas = 0;
+                total += bal;
+                start = i+1;
+                bal = 0;
             }
         }
-        return totalGas - totalCost < 0 ? -1 : start;
+        return bal + total >= 0 ? start : -1;
     }
 };
 
