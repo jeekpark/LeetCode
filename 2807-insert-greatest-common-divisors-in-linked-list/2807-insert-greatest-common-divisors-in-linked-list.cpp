@@ -18,7 +18,7 @@ public:
         {
             ListNode* temp = new ListNode(__gcd(cur->val, cur->next->val), cur->next);
             cur->next = temp;
-            cur = cur->next->next;
+            cur = temp->next;
         }
         return head;
     }
