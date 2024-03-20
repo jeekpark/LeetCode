@@ -8,7 +8,7 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-int val;
+
 class Solution {
 public:
 
@@ -18,7 +18,7 @@ public:
         ListNode* cur = head;
         while (cur->next)
         {
-            val = __gcd(cur->val, cur->next->val);
+            int val = __gcd(cur->val, cur->next->val);
             ListNode* temp = new ListNode(val, cur->next);
             cur->next = temp;
             cur = temp->next;
