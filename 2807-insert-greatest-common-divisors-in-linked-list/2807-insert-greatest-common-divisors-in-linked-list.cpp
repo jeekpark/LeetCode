@@ -8,11 +8,12 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+int val;
 class Solution {
 public:
 
     ListNode* insertGreatestCommonDivisors(ListNode* head) {
-        int val;
+        
         if(!head || !head->next) return head;
         ListNode* cur = head;
         while (cur->next)
