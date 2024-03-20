@@ -2,10 +2,11 @@ class Solution {
 public:
     int subtractProductAndSum(int n) {
         int a = 1, b = 0;
-        for (; n; n /= 10)
+        for (int temp; n; n /= 10)
         {
-            a *= n % 10;
-            b += n % 10;
+            temp = n % 10;
+            a *= temp;
+            b += temp;
         }
         return a - b;
     }
